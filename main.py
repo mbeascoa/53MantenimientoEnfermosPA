@@ -10,20 +10,20 @@ def insertar():
 
     cursor = connection.cursor()
     try:
-        ideptno = int(input("Inserte el número del enfermo : "))
-        inombre = input("Inserte el apellido del enfermo")
+        inscrip = int(input("Inserte el número del enfermo : "))
+        iapelli = input("Inserte el apellido del enfermo")
         idir = input("Inserte la dirección del enfermo")
         ifecnac= input("Inserte la fecha de nacimiento del enfermo")
         isex= input("Inserte el sexo del enfermo")
         inss = input("Inserte el Número de la Seguridad Social del enfermo")
 
-        cursor.callproc('tablaenfermo.insertar', (ideptno, inombre, idir, ifecnac, isex, inss))
+        cursor.callproc('tablaenfermo.insertar', (inscrip, iapelli, idir, ifecnac, isex, inss))
         print("DATO INSERTADO")
 #        ConsultaAlta = ("INSERT INTO ENFERMO "
 #                        "(INSCRIPCION, APELLIDO, DIRECCION, FECHA_NAC, SEXO, NSS) "
 #                        "VALUES (:P1, :P2, :P3, to_date(:P4, 'dd-mm-yyyy'), :P5, :P6)")
 
-#        datosEnfermo = (ideptno, inombre, idir, ifecnac, isex, inss)
+#        datosEnfermo = (inscrip, iapelli, idir, ifecnac, isex, inss)
 #        cursor.execute(ConsultaAlta, datosEnfermo)
         connection.commit()
 
